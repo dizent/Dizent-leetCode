@@ -1,2 +1,8 @@
 # Default ignored files
 /workspace.xml
+
+../.idea/
+
+../out/
+
+../Dizent-leetCode.iml
