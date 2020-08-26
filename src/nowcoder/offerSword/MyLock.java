@@ -32,7 +32,7 @@ public class MyLock {
         public void transactionToTarget(Integer money, Account target) {//转账方法
             Allocator.getInstance().apply(this, target);
             this.banalce -= money;
-            target.setBanalce(target.getBanalce() + money);
+            target.Banalce(target.getBanalce() + money);
             Allocator.getInstance().release(this, target);
         }
 
@@ -40,7 +40,7 @@ public class MyLock {
             return banalce;
         }
 
-        public void setBanalce(Integer banalce) {
+        public void Banalce(Integer banalce) {
             this.banalce = banalce;
         }
     }
