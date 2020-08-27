@@ -1,4 +1,4 @@
-package leetCode.easy.mergeTwoLists;
+package leetCode.regular.removeNthFromEnd;
 
 public class ListNode {
 
@@ -8,7 +8,7 @@ public class ListNode {
     ListNode() {
     }
 
-    public ListNode(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 
@@ -21,4 +21,6 @@ public class ListNode {
     public String toString() {
         return val + " -> " + next;
     }
+
+
 }
