@@ -2,10 +2,7 @@ package leetCode.easy.levelOrderBottom;
 
 import com.alibaba.fastjson.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
@@ -35,11 +32,9 @@ public class Solution {
     List<List<Integer>> result = new ArrayList<>();
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         bfs(root,0);
-        List<List<Integer>> returnArr = new ArrayList<>();
-        for(int i = result.size() - 1;i>= 0 ;i--){
-            returnArr.add(result.get(i));
-        }
-        return returnArr;
+        Collections.reverse(result);
+
+        return result;
     }
 
     public void bfs(TreeNode root,int depth){
