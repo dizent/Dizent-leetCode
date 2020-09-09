@@ -41,6 +41,19 @@ public class Solution {
         return result;
     }
 
+    /**
+     * 回溯算法，思路：
+     *
+     * 递归结束条件：当只选择一个数字时，将备选数字所有情况进行循环保存
+     *
+     * + 选择备选数字中的元素，然后将备选数字集合去除，将 k - 1
+     * + 递归
+     * + 当前选择递归完成之后，将pre去除当前选择，避免影响后续选择
+     *
+     * @param pre
+     * @param nums
+     * @param k
+     */
     public void combine(List<Integer> pre, List<Integer> nums, int k) {
         if (k == 1) {
             for (int i = 0; i < nums.size(); i++) {
