@@ -1,7 +1,6 @@
 package leetCode.easy.binaryTreePaths;
 
 import com.alibaba.fastjson.JSONObject;
-import leetCode.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +25,13 @@ public class Solution {
     public void dfsWithOutBackTracking(TreeNode root,StringBuffer path){
         if(root != null){
             StringBuffer pathSb = new StringBuffer(path);
-            pathSb.append(root.getVal());
-            if(root.getLeft() == null && root.getRight() == null){
+            pathSb.append(root.val);
+            if(root.left == null && root.right == null){
                 result.add(pathSb.toString());
             }else{
                 pathSb.append("->");
-                dfsWithOutBackTracking(root.getLeft(),pathSb);
-                dfsWithOutBackTracking(root.getRight(),pathSb);
+                dfsWithOutBackTracking(root.left,pathSb);
+                dfsWithOutBackTracking(root.right,pathSb);
             }
 
         }
@@ -42,17 +41,17 @@ public class Solution {
             return;
         }
         //区分两种情况，一个是从根节点返回过来的，一个是从叶子节点返回过来的，根节点只新增了一个元素，所以删除1，叶子节点新增三个元素，所以删除3；
-        if (root.getLeft() == null && root.getRight() == null) {
-            route.append(root.getVal());
+        if (root.left == null && root.right == null) {
+            route.append(root.val);
             result.add(route.toString());
-            lastLeafLength = String.valueOf(root.getVal()).length();
+            lastLeafLength = String.valueOf(root.val).length();
             lastLeaf = true;
             return;
         } else {
-            route.append(root.getVal() + "->");
-            if (root.getLeft() != null) {
-                dfs(root.getLeft());
-                int valLength = String.valueOf(root.getLeft().getVal()).length();
+            route.append(root.val + "->");
+            if (root.left != null) {
+                dfs(root.left);
+                int valLength = String.valueOf(root.left.val).length();
                 if (lastLeaf) {
                     route.delete(route.length() - lastLeafLength, route.length());
                 } else {
@@ -61,9 +60,9 @@ public class Solution {
                 lastLeafLength = 0;
                 lastLeaf = false;
             }
-            if (root.getRight() != null) {
-                dfs(root.getRight());
-                int valLength = String.valueOf(root.getRight().getVal()).length();
+            if (root.right != null) {
+                dfs(root.right);
+                int valLength = String.valueOf(root.right.val).length();
                 if (lastLeaf) {
                     route.delete(route.length()  - lastLeafLength, route.length());
                 } else {

@@ -21,6 +21,20 @@ import java.util.PriorityQueue;
  */
 public class Solution {
 
+    /**
+     * 思路：
+     *
+     * 新建一个队列，根据数字大小排序
+     *
+     * + 循环遍历数组
+     * + 当数组元素少于k时，直接add
+     * + 当元素个数大于k时，判断队列顶部元素（队列排序，顶部为最小元素）是否大于当前元素
+     * + 如果当前元素更大，则将队列顶部元素移除
+     * + 将当前元素add到队列
+     * @param nums
+     * @param k
+     * @return
+     */
     public int findKthLargest(int[] nums, int k) {
         if(nums == null ||nums.length == 0){
             return 0;

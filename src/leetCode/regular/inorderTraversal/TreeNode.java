@@ -1,13 +1,14 @@
-package leetCode.common;
+package leetCode.regular.inorderTraversal;
+
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNode {
 
-    int val;
-    TreeNode left;
-    TreeNode right;
+     int val;
+     TreeNode left;
+     TreeNode right;
 
     TreeNode() {
     }
@@ -30,6 +31,7 @@ public class TreeNode {
                 ", \"right\":" + right +
                 '}';
     }
+
 
     public static TreeNode arrayToTreeNode(Integer[] parts) {
         Integer item = parts[0];
@@ -66,4 +68,3 @@ public class TreeNode {
         return root;
     }
 }
-

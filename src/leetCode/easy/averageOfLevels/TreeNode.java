@@ -1,11 +1,11 @@
-package leetCode.common;
+package leetCode.easy.averageOfLevels;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNode {
 
-    int val;
+     int val;
     TreeNode left;
     TreeNode right;
 
@@ -66,4 +66,3 @@ public class TreeNode {
         return root;
     }
 }
-
