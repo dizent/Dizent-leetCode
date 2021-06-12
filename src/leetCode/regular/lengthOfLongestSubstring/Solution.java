@@ -1,5 +1,9 @@
 package leetCode.regular.lengthOfLongestSubstring;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 /**
  * 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
  *
@@ -25,22 +29,29 @@ package leetCode.regular.lengthOfLongestSubstring;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution {
-
+    /**
+     * 使用滑动窗口算法
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
-        char[] sArr = s.toCharArray();
-        int length = 0;
-        for(int i = 0;i<sArr.length;i++){
-            length = Math.max(length,getLengthOfIndex(i,sArr));
+        int strLen = s.length();
+        int subStrLen = 0;
+        //存储字符的位置map
+        Map<Character, Integer> characterIndexMap = new HashMap<>();
+        for(int end = 0,start = 0;end < strLen; end ++){
+            Character alpha = s.charAt(end);
+            if(characterIndexMap.containsKey(alpha)){
+                start = Math.max(characterIndexMap.get(alpha),start);
+            }
+            subStrLen = Math.max(subStrLen , end - start +1);
+            characterIndexMap.put(s.charAt(end),end + 1);
         }
-        return 0;
-    }
-
-    private int getLengthOfIndex(int i, char[] sArr) {
-        return 0;
+        return subStrLen;
     }
 
     public static void main(String[] args) {
-        String str = "pwwkew";
+        String str = "dvdf";
         System.out.println(new Solution().lengthOfLongestSubstring(str));
     }
 }

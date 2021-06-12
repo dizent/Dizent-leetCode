@@ -56,8 +56,17 @@ public class Solution {
         return sum;
     }
 
+    public int hammingWeight2(int n) {
+        int weight = 0;
+        while(n != 0){
+            weight += n & 1;
+            n = n  >>> 1;
+        }
+        return weight;
+    }
+
     public static void main(String[] args) {
-        int n = -3;
-        System.out.println(new Solution().hammingWeight(n));
+        int n = 3;
+        System.out.println(new Solution().hammingWeight2(n));
     }
 }

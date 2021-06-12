@@ -71,33 +71,6 @@ public class Solution {
         StringBuilder ret = new StringBuilder();
         for (StringBuilder row : rows) ret.append(row);
         return ret.toString();
-//        if(numRows <= 1){
-//            return s;
-//        }
-//        int colMuti = s.length() / (numRows + (numRows - 2)) ;
-//        int colLift = s.length() % (numRows + (numRows - 2)) ;
-//        int colNum = colMuti * (numRows - 1) + colLift / numRows + colLift % numRows;
-//        char[][] convertZ = new char[numRows][colNum];
-//        int circle = 0;
-//        int circleNum = numRows + (numRows - 2);
-//        int row = 0;
-//        int col = 0;
-//        boolean down = true;
-//        for(int i = 0;i < s.length();i++){
-//            convertZ[row][col] = s.charAt(i);
-//            if(row < numRows && down){
-//                row += 1;
-//            }
-//            if(row > 0 && !down){
-//                row -= 1;
-//            }
-//            if(row == numRows - 1){
-//                down = false;
-//                row -= 1;
-//            }
-//        }
-//        print2ThArr(convertZ);
-//        return "";
     }
 
     public void print2ThArr(char[][] board) {
