@@ -37,8 +37,10 @@ public class Solution {
      * 思路：
      *
      * 两数相除，不能用乘法，除法和取余运算
+     * 使用位运算，将被除数一直 向左移位，等于 * 2 的N次方
+     * 当被除数 小于 位移后的除数 时，则表示 结果会为 2^(n-1) ~ 2^n 之间
+     * 记录 2 ^ (n-1) ，并且将除数 - 位移后的被除数
      *
-     * +
      * @param dividend
      * @param divisor
      * @return
@@ -49,8 +51,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int dividend = 1024;
-        int divisor = 333;
+        int dividend = 2147483647;
+        int divisor = 2;
         System.out.println(solution.divide(dividend,divisor));
     }
 }

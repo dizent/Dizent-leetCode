@@ -1,24 +1,22 @@
 package other;
 
-import java.time.DayOfWeek;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 
 public class LocalTimeTest {
 
     public static void main(String[] args) throws InterruptedException {
-        LocalTime start = LocalTime.now();
-        Thread.sleep(234);
-        LocalTime end = LocalTime.now().plusMinutes(2);
-        long i = Duration.between(start,end).getSeconds();
-        System.out.println(i);
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        System.out.println(sdf.format(date));
 
-
-        LocalDate now= LocalDate.now();
-        System.out.println(now);
-        LocalDate with =now.with(TemporalAdjusters.next(DayOfWeek.MONDAY));
-        System.out.println(with);
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
+
+
 }
