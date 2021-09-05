@@ -36,17 +36,16 @@ public class FooBar {
     }
 
 
-    private CountDownLatch a = new CountDownLatch(1);
+    private CountDownLatch countDownLatch = new CountDownLatch(1);
     private CyclicBarrier barrier = new CyclicBarrier(2);
 
 
     public void foo(Runnable printFoo) throws InterruptedException {
         try {
             for (int i = 0; i < n; i++) {
-
                 // printFoo.run() outputs "foo". Do not change or remove this line.
                 printFoo.run();
-                a.countDown();
+                countDownLatch.countDown();
                 barrier.await();
             }
         } catch (Exception e) {
@@ -56,11 +55,11 @@ public class FooBar {
     public void bar(Runnable printBar) throws InterruptedException {
         try {
             for (int i = 0; i < n; i++) {
-                a.await();
+                countDownLatch.await();
                 // printBar.run() outputs "bar". Do not change or remove this line.
                 printBar.run();
                 if(i != n-1) {
-                    a = new CountDownLatch(1);
+                    countDownLatch = new CountDownLatch(1);
                     barrier.await();
                 }
             }

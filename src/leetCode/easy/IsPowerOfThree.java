@@ -22,6 +22,7 @@ public class IsPowerOfThree {
 
 
     public static boolean higherFunction(int n){
+//        转换成3进制
         String str = Integer.toString(n,3);
         return str.matches("^10*$");
     }

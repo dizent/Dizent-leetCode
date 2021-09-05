@@ -24,7 +24,7 @@ public class Solution {
         int m = grid.length;
         int n = grid[0].length;
         int floors = Math.min(m, n) / 2;
-        for (int f = 0; f <= floors; f++) {
+        for (int f = 0; f < floors; f++) {
             int nodeNum = 2 * (m + n - 4 * (f + 1) + 2);
             if (k % nodeNum == 0) {
                 continue;
@@ -79,8 +79,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int [][]grid = new int[][]{{10,1,4,8},{6,6,3,10},{7,4,7,10},{1,10,6,1},{2,1,1,10},{3,8,9,2},{7,1,10,10},{7,1,4,9},{2,2,4,2},{10,7,5,10}};
-        int k = 1;
+        int [][]grid = new int[][]
+                {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}}
+                ;
+        int k = 2;
         int[][] rotateGrip = new Solution().rotateGrid(grid,k);
         System.out.println(JSONObject.toJSONString(rotateGrip));
     }
