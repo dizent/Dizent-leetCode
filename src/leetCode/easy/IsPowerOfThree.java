@@ -27,8 +27,18 @@ public class IsPowerOfThree {
         return str.matches("^10*$");
     }
 
+    public static boolean getPowerOfThree(int n){
+        int power = 1;
+        while(power * 3 < Integer.MAX_VALUE && power * 3 > 0){
+            System.out.println(power);
+            power *= 3;
+        }
+        return power % 3 == 0;
+    }
+
 
     public static void main(String[] args) {
-        System.out.println(higherFunction(27));
+//        System.out.println(higherFunction(27));
+        System.out.println(getPowerOfThree(27));
     }
 }

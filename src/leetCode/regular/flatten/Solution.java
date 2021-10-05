@@ -46,6 +46,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Node first = new Node();
+
     }
 }
+
+

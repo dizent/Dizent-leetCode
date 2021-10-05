@@ -1,7 +1,11 @@
-package leetCode.common;
+package leetCode.regular.splitListToParts;
 
+/**
+ * @Auther: 布谷
+ * @Date: 2021/9/22 20:58
+ * @Description:
+ */
 public class ListNode {
-
     int val;
     ListNode next;
 
@@ -21,6 +25,4 @@ public class ListNode {
     public String toString() {
         return val + " -> " + next;
     }
-
-
 }
